@@ -12,12 +12,15 @@ const App = {
             switchLogicSecond: true,
             outputServerInfo: undefined,
             arrayHistory: [],
+            alterEnd: ["Создать базу данных", "Полномочия", "Список процессов", "Переменные Состояние"],
+            namesDb: ["db_test", "information_schema", "performance_schema"],
         }
     },
     methods: {
         logirov() {
             this.arrayHistory.push([`(${this.inputTypeServer}) `, `${this.inputUserName}`]);
             this.switchLogicFirst = false;
+            this.conditionSign = "Выбрать базу данных"
         },
         removes(index) {
             this.arrayHistory.splice(index, 1)
@@ -28,24 +31,12 @@ const App = {
 const app = Vue.createApp(App);
 
 app.component('todo-item', {
-    props: ['todo'],
+    props: ['alterEnd', 'namesDb'],
     template: `
     <div class="component">
             <ul class="component__list-actions">
-              <li class="component__item-actions">
-                <a href="#" class="component__link-actions link link-ui-inteface">Полномочия</a>
-              </li>
-              <li class="component__item-actions">
-                <a href="#" class="component__link-actions link link-ui-inteface">Полномочия</a>
-              </li>
-              <li class="component__item-actions">
-                <a href="#" class="component__link-actions link link-ui-inteface">Полномочия</a>
-              </li>
-              <li class="component__item-actions">
-                <a href="#" class="component__link-actions link link-ui-inteface">Полномочия</a>
-              </li>
-              <li class="component__item-actions">
-                <a href="#" class="component__link-actions link link-ui-inteface">Полномочия</a>
+              <li class="component__item-actions" v-for="name of alterEnd">
+                <a href="#" class="component__link-actions link link-ui-inteface">{{name}}</a>
               </li>
             </ul>
             <p class="component__sign">Версия MySQL<span class="component__sign-main-inform">5.5.5-10.3.13-MariaDB-log</span>с PHP-расширением MySQLi</p>
@@ -61,23 +52,9 @@ app.component('todo-item', {
                 </tr>
               </thead>
               <tbody>
-                <tr class="component-table__row">
-                  <td class="component-table__col"><input type="checkbox" value="db_test" /></td>
-                  <th class="component-table__col component-table__th"><a href="#">db_test</a></th>
-                  <td class="component-table__col"><a href="#" title="Изменить базу данных">utf8_general_ci</a></td>
-                  <td align="right" class="component-table__col"><a href="#" title="Схема базы данных">?</a></td>
-                  <td align="right" class="component-table__col">?</td>
-                </tr>
-                <tr class="component-table__row">
-                  <td class="component-table__col"><input type="checkbox" value="db_test" /></td>
-                  <th class="component-table__col component-table__th"><a href="#">db_test</a></th>
-                  <td class="component-table__col"><a href="#" title="Изменить базу данных">utf8_general_ci</a></td>
-                  <td align="right" class="component-table__col"><a href="#" title="Схема базы данных">?</a></td>
-                  <td align="right" class="component-table__col">?</td>
-                </tr>
-                <tr class="component-table__row">
-                  <td class="component-table__col"><input type="checkbox" value="db_test" /></td>
-                  <th class="component-table__col component-table__th"><a href="#">db_test</a></th>
+                <tr class="component-table__row" v-for="data of namesDb">
+                  <td class="component-table__col"><input type="checkbox" v-on:click="plus" value="{{data}}" /></td>
+                  <th class="component-table__col component-table__th"><a href="#">{{data}}</a></th>
                   <td class="component-table__col"><a href="#" title="Изменить базу данных">utf8_general_ci</a></td>
                   <td align="right" class="component-table__col"><a href="#" title="Схема базы данных">?</a></td>
                   <td align="right" class="component-table__col">?</td>
@@ -86,12 +63,22 @@ app.component('todo-item', {
             </table>
             <div class="component__control component-controls">
               <div class="component-controls__box-control">
-                <p class="component-controls__sign-control">Выбранные (0)</p>
+                <p class="component-controls__sign-control">Выбранные ({{counter}})</p>
                 <div class="component-controls__button">Удалить</div>
               </div>
             </div>
           </div>
-    `
+    `,
+    data() {
+        return {
+            counter: 0,
+        }
+    },
+    methods: {
+        plus() {
+            this.counter++;
+        }
+    },
 })
 
 app.component('route-panel-control', {
@@ -205,7 +192,7 @@ app.component('login-form', {
         test() {
             this.$root.logirov();
         }
-      },
+    },
 })
 
 app.component('breadcrums', {

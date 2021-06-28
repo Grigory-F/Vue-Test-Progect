@@ -67,8 +67,7 @@
         </div>
         <div class="container__main-content main-content">
           <login-form v-if="switchLogicFirst == true" :vdd="handlerDatabase"></login-form>
-
-          <todo-item v-if="switchLogicFirst == false"></todo-item>
+          <todo-item v-if="switchLogicFirst == false" :alter-end="alterEnd" :names-db="namesDb"></todo-item>
         </div>
       </div>
     </div>
