@@ -1,0 +1,328 @@
+@import "core-style/core";
+.page {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+.container {
+  min-width: 650px;
+  display: grid;
+  grid-template-columns: 270px min-content;
+  gap: 10px;
+
+  &__panel {
+  }
+  &__select-language {
+  }
+
+  &__condition-sign {
+    height: 60px;
+    display: flex;
+  }
+
+  &__breadcrums {
+  }
+
+  &__main-content {
+    
+  }
+  &__list-last-visit {
+  }
+}
+.route-panel {
+}
+.select-language {
+  &__label {
+    font-size: 14px;
+  }
+
+  &__select {
+    width: 135px;
+    padding: 2px 3px;
+  }
+
+  &__option {
+  }
+}
+.header-block {
+  height: 35px;
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  position: relative;
+}
+.condition-sign {
+  align-items: center;
+  padding: 0 20px;
+  background-color: #ddf;
+  border-bottom: 1px solid #000;
+  &__sign {
+    font-size: 20px;
+  }
+
+  &__sign--version-app {
+    font-style: italic;
+    color: #777;
+  }
+
+  &__numb-version {
+    font-size: 14px;
+    margin-left: 10px;
+    font-style: initial;
+  }
+
+  &__sign--condition-main {
+  }
+  &--version {
+    background-color: #eee;
+    border-bottom: 1px solid #999;
+  }
+}
+
+.list-last-visit {
+  list-style: none;
+  padding: 10px 14px;
+  border-bottom: 1px solid gray;
+  margin: 0;
+  &__item {
+  }
+
+  &__box-link {
+    text-decoration: none;
+    font-size: 14px;
+    color: blue;
+  }
+
+  &__sign-server {
+  }
+
+  &__sign-user {
+  }
+}
+
+.main-panel {
+}
+.breadcrums {
+  &__list {
+    margin: 0;
+    display: flex;
+    padding: 5px 10px;
+    background: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__item {
+    list-style: none;
+  }
+}
+.condition-sign--condition {
+}
+.main-content {
+  padding: 0 20px;
+  &__container {
+  }
+
+  &__table-form {
+    margin-top: 20px;
+  }
+}
+.table-form {
+  border-collapse: collapse;
+  border-color: gray;
+  box-sizing: border-box;
+  &__line {
+  }
+  &__column {
+    padding: 4px;
+    border: 1px solid #999;
+  }
+  &__select {
+    width: 80%;
+  }
+  &__column--label {
+    background-color: #eee;
+  }
+
+  &__label {
+    font-size: 13px;
+    line-height: 1.25;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  &__box-control {
+    font-size: 14px;
+    margin-top: 13px;
+  }
+  &__submit {
+    padding: 3px 10px;
+    border-radius: 1px;
+    margin-right: 10px;
+    border: 1px solid gray;
+    font-size: 13px;
+    display: inline-block;
+    background-color: rgb(239, 239, 239);
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+  }
+  &__checkbox {
+    margin-right: 5px;
+  }
+}
+.table-form-input {
+  display: block;
+  padding: 2px 2px;
+  border-radius: 1px;
+  border: 1px solid rgb(133, 133, 133);
+  font-size: 13px;
+
+  &:focus {
+    outline: 1px solid black;
+  }
+}
+
+.component {
+  &__list-actions {
+    padding: 0;
+    margin-bottom: 0px;
+  }
+
+  &__item-actions {
+    list-style: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__link-actions {
+    text-decoration: none;
+  }
+
+  &__sign {
+    font-size: 14px;
+  }
+
+  &__sign-main-inform {
+    font-weight: bold;
+  }
+
+  &__table {
+  }
+
+  &__control {
+  }
+}
+.component-table {
+  margin-bottom: 10px;
+  & a {
+    text-decoration: none;
+  }
+  & a:hover {
+    text-decoration: underline;
+    color: red;
+  }
+  & tbody th {
+    background-color: #eee;
+    text-align: left;
+  }
+  & tbody th,
+  tbody td {
+    padding: 3px 4px;
+  }
+  &__row {
+  }
+
+  &__col {
+    & input {
+      margin: 2px;
+    }
+  }
+
+  &__th {
+  }
+  & > th,
+  td,
+  tr {
+    border-collapse: collapse;
+    border: 1px solid #999;
+    text-decoration: none;
+    padding: 3px 4px;
+  }
+}
+.component-controls {
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  box-shadow: 0 -10px 10px white;
+  padding: 10px 0;
+  &__box-control {
+    height: 50px;
+    width: 130px;
+    border-radius: 2px;
+    border: 1px solid gray;
+    position: relative;
+  }
+
+  &__sign-control {
+    font-size: 14px;
+    background-color: white;
+    display: block;
+    position: absolute;
+    top: -23px;
+    left: 10px;
+  }
+
+  &__button {
+    font-size: 13px;
+    background-color: rgb(239, 239, 239);
+    border: 1px solid gray;
+    width: min-content;
+    padding: 3px 7px;
+    position: absolute;
+    left: 5px;
+    top: calc(50% - 10px);
+  }
+}
+
+.component-server-control {
+  &__base-info {
+    padding: 12px 15px;
+    border-bottom: 1px solid gray;
+  }
+  &__select {
+    width: 150px;
+  }
+  &__link {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    :last-child {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.route-select-table {
+
+  &__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  &__item {
+  }
+
+  &__link {
+  }
+}

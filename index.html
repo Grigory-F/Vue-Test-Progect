@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO -->
+    <meta name="google" content="notranslate" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Page description" />
+    <link rel="canonical" href="https://www.mywebsite.com/page" />
+    <!-- Messenger's snippets -->
+    <meta property="og:title" content="Unique page title - My Site" />
+    <meta property="og:description" content="Page description" />
+    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta property="og:image:alt" content="Image description" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:url" content="https://www.mywebsite.com/page" />
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- <link rel="manifest" href="/my.webmanifest" /> -->
+    <!-- Style browser tab -->
+    <meta name="theme-color" content="#FF00FF" />
+    <!-- Style -->
+    <link rel="stylesheet" href="css/app.css" />
+    <title>Adminer made with VUE</title>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="page">
+    <div class="container" id="container" v-cloak>
+      <div class="container__panel route-panel">
+        <div class="container__select-language select-language header-block">
+          <label class="select-language__label" for=""
+            >Язык:
+            <select class="select-language__select select-ui" name="select-language">
+              <option class="select-language__option" value="Eng">Русский</option>
+              <option class="select-language__option" value="Rus">English</option>
+            </select>
+          </label>
+        </div>
+        <div class="container__condition-sign condition-sign condition-sign--version">
+          <span class="condition-sign__sign condition-sign__sign--version-app">Adminer<span class="condition-sign__numb-version">{{numbVersionApp}}</span></span>
+        </div>
+        <!-- <ul class="container__list-last-visit list-last-visit" v-if="arrayHistory.length !== 0">
+          <li class="list-last-visit__item" v-on:click="removes(index)" v-for="(item, index) in arrayHistory">
+            <a href="# " class="list-last-visit__box-link">
+              <span class="list-last-visit__sign-server">{{item.join("")}}</span>
+            </a>
+          </li>
+        </ul> -->
+        <route-panel-control v-if="switchLogicFirst == false"></route-panel-control>
+        <route-select-table-bd v-if="switchLogicFirst == false"></route-select-table-bd>
+      </div>
+      <div class="container__panel main-panel">
+        <div class="container__breadcrums breadcrums header-block">
+          <breadcrums v-if="switchLogicFirst == false"></breadcrums>
+        </div>
+        <div class="container__condition-sign condition-sign condition-sign--condition">
+          <span class="condition-sign__sign condition-sign__sign--condition-main">{{conditionSign}}</span>
+        </div>
+        <div class="container__main-content main-content">
+          <login-form v-if="switchLogicFirst == true" :vdd="handlerDatabase"></login-form>
+
+          <todo-item v-if="switchLogicFirst == false"></todo-item>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

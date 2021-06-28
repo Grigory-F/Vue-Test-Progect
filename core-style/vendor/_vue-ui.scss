@@ -1,0 +1,48 @@
+.link {
+  text-decoration: none;
+  color: blue;
+  &:hover {
+    text-decoration: underline;
+    color: red;
+  }
+  &-ui-inteface {
+    font-size: 14px;
+    
+  }
+  &-ui-table {
+    font-size: 13px;
+  }
+}
+
+.select-ui {
+  background-color: transparent;
+  border: 1px solid rgb(133, 133, 133);
+  border-radius: 1px;
+  font-size: 13px;
+  & > option {
+    background-color: white;
+    border-radius: none;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #999;
+  font-size: 13px;
+  & thead td,
+  thead th {
+    background-color: #ddf;
+    white-space: nowrap;
+    padding: 3px 4px;
+  }
+  & tbody th {
+    background-color: #eee;
+    text-align: left;
+  }
+  tbody tr:hover td,
+  tbody tr:hover th {
+    background: #eee;
+  }
+}
+
+
