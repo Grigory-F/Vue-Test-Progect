@@ -474,6 +474,9 @@ table tbody tr:hover th {
 .component__list-actions {
   padding: 0;
   margin-bottom: 0px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 .component__item-actions {
